@@ -4,8 +4,18 @@ class Pessoa:
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
+
     def cumprimentar(self):
         return f'Olá {id(self)}'
+
+    @staticmethod
+    def medoto_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - Olhos: {Pessoa.olhos}'
+
 
 
 if __name__ == '__main__':
@@ -30,5 +40,6 @@ if __name__ == '__main__':
     Pessoa.olhos = 3
     print(carlos.olhos, lis.olhos, petenha.olhos)
     print(id(Pessoa.olhos), id(carlos.olhos), id(lis.olhos), id(petenha.olhos))
-
-
+    print(Pessoa.medoto_estatico(), lis.medoto_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), lis.nome_e_atributos_de_classe())
+    
